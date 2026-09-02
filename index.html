@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Martha Melo | Beauty Care - Cosmetología, Skincare & Maquillaje</title>
+  
+  <!-- Google Fonts Opción 1: Cormorant Garamond (Elegante/Femenina) + Montserrat (Limpia) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    /* --------------------------------------------------
+       VARIABLES & TOKENS DE DISEÑO
+    -------------------------------------------------- */
+    :root {
+      --color-primary: #880E4F;        /* Elegant Deep Wine / Maroon */
+      --color-primary-dark: #560027;   /* Wine Oscuro */
+      --color-magenta: #C2185B;        /* Dark Magenta / Berry */
+      --color-mauve: #D390BC;          /* Dusty Pink / Mauve */
+      --color-pink-soft: #FCE4EC;      /* Soft Pink Cream */
+      --color-bg-light: #FAFAFA;       /* Core Background Light */
+      --color-text-dark: #212121;      /* Tipografía Oscura */
+      --color-text-muted: #616161;     /* Texto Secundario */
+      --color-white: #FFFFFF;
+      
+      /* TIPOGRAFÍAS OPCIÓN 1 */
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Montserrat', sans-serif;
+      
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      --shadow-sm: 0 4px 15px rgba(136, 14, 79, 0.05);
+      --shadow-md: 0 8px 25px rgba(136, 14, 79, 0.12);
+      --border-radius: 8px;
+    }
+
+    /* --------------------------------------------------
+       RESET & BASE
+    -------------------------------------------------- */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      color: var(--color-text-dark);
+      background-color: var(--color-bg-light);
+      line-height: 1.7;
+      font-size: 14px;
+      font-weight: 300;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-serif);
+      font-weight: 600;
+      line-height: 1.15;
+      letter-spacing: 0.5px;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    img, svg {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .section-padding {
+      padding: 80px 0;
+    }
+
+    /* --------------------------------------------------
+       BOTONES Y TITULOS
+    -------------------------------------------------- */
+    .btn {
+      display: inline-block;
+      padding: 12px 32px;
+      background-color: var(--color-primary);
+      color: var(--color-white);
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-radius: 4px;
+      border: 1px solid var(--color-primary);
+      transition: var(--transition);
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(136, 14, 79, 0.15);
+    }
+
+    .btn:hover {
+      background-color: var(--color-primary-dark);
+      border-color: var(--color-primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(136, 14, 79, 0.25);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--color-primary);
+      border: 1px solid var(--color-primary);
+      box-shadow: none;
+    }
+
+    .btn-outline:hover {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+    }
+
+    .btn-sm {
+      padding: 8px 18px;
+      font-size: 0.7rem;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 3rem;
+      color: var(--color-primary);
+      margin-bottom: 5px;
+      position: relative;
+      display: inline-block;
+      font-weight: 500;
+    }
+
+    .section-title h2::after {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 1px;
+      background-color: var(--color-mauve);
+      margin: 12px auto 0;
+    }
+
+    .section-title p {
+      color: var(--color-text-muted);
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 8px;
+    }
+
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* --------------------------------------------------
+       1. TOP BAR & NAV
+    -------------------------------------------------- */
+    .top-bar {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+      text-align: center;
+      padding: 8px 0;
+      font-size: 0.72rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+
+    .navbar {
+      background-color: var(--color-white);
+      border-bottom: 1px solid rgba(136, 14, 79, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    }
+
+    .navbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .brand-logo svg.logo-img {
+      height: 48px;
+      width: 48px;
+    }
+
+    .brand-text {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: var(--color-primary);
+      line-height: 1;
+    }
+
+    .brand-text span {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 0.58rem;
+      font-weight: 400;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-top: 4px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+    }
+
+    .nav-links a {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--color-text-dark);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--color-primary);
+    }
+
+    /* --------------------------------------------------
+       2. HERO SECTION
+    -------------------------------------------------- */
+    .hero {
+      padding: 90px 0;
+      background: linear-gradient(135deg, var(--color-white) 0%, var(--color-pink-soft) 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .hero-content h1 {
+      font-size: 3.8rem;
+      color: var(--color-primary);
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+
+    .hero-content .tagline {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-style: italic;
+      color: var(--color-magenta);
+      margin-bottom: 20px;
+      font-weight: 400;
+    }
+
+    .hero-content p {
+      color: var(--color-text-muted);
+      margin-bottom: 30px;
+      max-width: 520px;
+      font-size: 0.95rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .hero-illustration {
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-illustration svg {
+      width: 100%;
+      max-width: 380px;
+      height: auto;
+      filter: drop-shadow(0 10px 20px rgba(136, 14, 79, 0.1));
+    }
+
+    /* --------------------------------------------------
+       3. NUESTRA ESENCIA
+    -------------------------------------------------- */
+    .essence-section {
+      background-color: var(--color-white);
+    }
+
+    .essence-container {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .essence-text {
+      font-size: 1rem;
+      color: var(--color-text-dark);
+      line-height: 1.8;
+    }
+
+    .essence-text p {
+      margin-bottom: 20px;
+    }
+
+    .essence-highlight {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      color: var(--color-primary);
+      text-align: center;
+      margin: 40px 0;
+      padding: 30px;
+      background-color: var(--color-pink-soft);
+      border-radius: var(--border-radius);
+      border-left: 3px solid var(--color-magenta);
+      font-style: italic;
+      line-height: 1.3;
+    }
+
+    /* --------------------------------------------------
+       4. DESTACADOS / CATÁLOGO DE PRODUCTOS
+    -------------------------------------------------- */
+    .products-section {
+      background-color: var(--color-bg-light);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .product-card {
+      background-color: var(--color-white);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(136, 14, 79, 0.08);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--color-mauve);
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background-color: var(--color-primary);
+      color: var(--color-white);
+      font-size: 0.65rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 4px;
+      letter-spacing: 1.5px;
+    }
+
+    .product-image-holder {
+      position: relative;
+      height: 250px;
+      background-color: var(--color-pink-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .product-image-holder img {
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .product-info {
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
+    }
+
+    .product-brand {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      color: var(--color-magenta);
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      margin-bottom: 5px;
+    }
+
+    .product-title {
+      font-size: 1.4rem;
+      color: var(--color-primary);
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .product-desc {
+      font-size: 0.82rem;
+      color: var(--color-text-muted);
+      margin-bottom: 20px;
+    }
+
+    .product-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 15px;
+      border-top: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .product-price {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--color-text-dark);
+    }
+
+    .catalog-banner {
+      margin-top: 50px;
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+      color: var(--color-white);
+      padding: 40px;
+      border-radius: var(--border-radius);
+      text-align: center;
+    }
+
+    .catalog-banner h3 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+
+    .catalog-banner p {
+      margin-bottom: 25px;
+      opacity: 0.9;
+      font-size: 0.9rem;
+    }
+
+    /* --------------------------------------------------
+       5. BENEFICIOS Y DIFERENCIADORES
+    -------------------------------------------------- */
+    .benefits {
+      background-color: var(--color-white);
+      border-top: 1px solid rgba(136, 14, 79, 0.08);
+      border-bottom: 1px solid rgba(136, 14, 79, 0.08);
+      padding: 45px 0;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      text-align: center;
+    }
+
+    .benefit-item {
+      padding: 0 15px;
+    }
+
+    .benefit-icon {
+      margin: 0 auto 15px;
+      width: 44px;
+      height: 44px;
+      color: var(--color-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .benefit-item h4 {
+      font-size: 1.1rem;
+      color: var(--color-primary);
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .benefit-item p {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+    }
+
+    /* --------------------------------------------------
+       6. SOBRE MARTHA
+    -------------------------------------------------- */
+    .about-bg {
+      background-color: var(--color-white);
+    }
+
+    .about-container {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .about-text-content h3 {
+      font-size: 1.8rem;
+      color: var(--color-primary);
+      margin: 35px 0 12px;
+      font-weight: 500;
+    }
+
+    .about-text-content p {
+      color: var(--color-text-dark);
+      font-size: 1rem;
+      margin-bottom: 18px;
+      line-height: 1.8;
+    }
+
+    .quote-box {
+      border-left: 3px solid var(--color-magenta);
+      padding: 20px 25px;
+      margin: 30px 0;
+      background-color: var(--color-pink-soft);
+      border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    }
+
+    .quote-box p {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-style: italic;
+      color: var(--color-primary);
+      margin-bottom: 0;
+    }
+
+    /* --------------------------------------------------
+       7. FOOTER & CONTACTO SOCIAL
+    -------------------------------------------------- */
+    footer {
+      background-color: var(--color-primary-dark);
+      color: var(--color-white);
+      padding: 70px 0 20px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1.2fr 1.5fr;
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+
+    .footer-col h5 {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: var(--color-pink-soft);
+      font-weight: 500;
+    }
+
+    .footer-col p, .footer-col ul li {
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.75);
+      margin-bottom: 12px;
+    }
+
+    .footer-col ul li a {
+      transition: var(--transition);
+    }
+
+    .footer-col ul li a:hover {
+      color: var(--color-pink-soft);
+      padding-left: 4px;
+    }
+
+    /* ESTILOS DE CONTACTO E ICONOS SOCIALES */
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 14px;
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .contact-item svg {
+      width: 18px;
+      height: 18px;
+      color: var(--color-mauve);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .social-links-wrapper {
+      margin-top: 20px;
+    }
+
+    .social-links-title {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--color-pink-soft);
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 12px;
+    }
+
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background-color: rgba(252, 228, 236, 0.12);
+      color: var(--color-pink-soft);
+      border: 1px solid rgba(211, 144, 188, 0.3);
+      transition: var(--transition);
+    }
+
+    .social-btn svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    .social-btn:hover {
+      background-color: var(--color-pink-soft);
+      color: var(--color-primary-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .social-btn.wa:hover {
+      background-color: #25D366;
+      border-color: #25D366;
+      color: #FFFFFF;
+    }
+
+    .social-btn.ig:hover {
+      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      border-color: transparent;
+      color: #FFFFFF;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 25px;
+      text-align: center;
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.5);
+      letter-spacing: 1px;
+    }
+
+    /* --------------------------------------------------
+       RESPONSIVE DESIGN
+    -------------------------------------------------- */
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-content {
+        text-align: center;
+      }
+
+      .hero-content p {
+        margin: 0 auto 30px;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 550px) {
+      .product-grid, .benefits-grid, .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-content h1 {
+        font-size: 2.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    Tienda de Maquillaje & Skincare en Manta • Asesoría Personalizada
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="#" class="brand-logo">
+        <svg class="logo-img" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="46" stroke="#880E4F" stroke-width="2.5"/>
+          <path d="M50 78 C32 60 25 45 32 30 C37 20 47 25 50 35 C53 25 63 20 68 30 C75 45 68 60 50 78 Z" fill="none" stroke="#212121" stroke-width="2.5"/>
+          <path d="M22 45 C15 35 15 25 25 20 M78 45 C85 35 85 25 75 20" stroke="#212121" stroke-width="2" fill="none"/>
+        </svg>
+        <div class="brand-text">
+          MARTHA MELO
+          <span>Beauty Care</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#esencia">Nuestra Esencia</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#sobre-martha">Sobre Martha</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section id="inicio" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content fade-in-up">
+        <h1>MARTHA MELO</h1>
+        <div class="tagline">Beauty Care • Cosmetología & Maquillaje</div>
+        <p>Un espacio creado para descubrir productos de alta calidad, recibir asesoría experta con criterio y encontrar soluciones verdaderamente adaptadas a tu rutina de cuidado personal.</p>
+        <div class="hero-buttons">
+          <a href="#productos" class="btn">Ver Productos</a>
+          <a href="#sobre-martha" class="btn btn-outline">Conóceme</a>
+        </div>
+      </div>
+      <div class="hero-illustration fade-in-up">
+        <svg viewBox="0 0 400 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="200" cy="175" r="140" fill="#FCE4EC"/>
+          <path d="M140 220 L185 100 C190 90 200 95 195 110 L160 230" stroke="#880E4F" stroke-width="8" stroke-linecap="round"/>
+          <path d="M260 220 L215 100 C210 90 200 95 205 110 L240 230" stroke="#880E4F" stroke-width="8" stroke-linecap="round"/>
+          <path d="M175 95 C165 75 145 75 135 90 C125 105 140 120 160 130 Z" fill="#C2185B"/>
+          <path d="M225 95 C235 75 255 75 265 90 C275 105 260 120 240 130 Z" fill="#C2185B"/>
+          <rect x="290" y="150" width="12" height="70" rx="3" fill="#880E4F"/>
+          <rect x="90" y="160" width="30" height="60" rx="5" fill="#FFFFFF" stroke="#880E4F" stroke-width="2"/>
+          <rect x="98" y="145" width="14" height="15" fill="#D390BC"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- NUESTRA ESENCIA -->
+  <section id="esencia" class="section-padding essence-section">
+    <div class="container essence-container">
+      <div class="section-title">
+        <h2>Nuestra Esencia</h2>
+        <p>Belleza con conocimiento, criterio y propósito</p>
+      </div>
+      <div class="essence-text">
+        <p>La belleza ha sido siempre parte de mi historia.</p>
+        <p>Mi formación en Cosmetología y Maquillaje me llevó a descubrir un universo que se convirtió en mi pasión y, posteriormente, en un proyecto al que he dedicado más de 10 años de experiencia.</p>
+        <p>Desde nuestros inicios, nos hemos especializado en maquillaje y cuidado de la piel, seleccionando productos que combinan calidad, innovación y las últimas tendencias del mundo de la belleza.</p>
+        
+        <p>Pero nuestra esencia va más allá de ofrecer productos.</p>
+        <p>Creemos en una belleza que inspira confianza, que resalta lo mejor de cada mujer y que transforma el cuidado personal en un momento especial. Por eso, la asesoría personalizada es una parte fundamental de nuestra filosofía: queremos que cada mujer encuentre aquello que realmente la haga verse y sentirse increíble.</p>
+
+        <div class="essence-highlight">
+          "Porque la verdadera belleza comienza cuando te sientes bien contigo misma."
+        </div>
+
+        <p>Nuestra experiencia también nos ha permitido asesorar a profesionales y escuelas de maquillaje, acompañándolos en la selección de productos y soluciones para la formación de nuevos talentos en la industria.</p>
+        <p>Hoy continuamos evolucionando con la misma pasión con la que comenzamos, uniendo belleza, experiencia y atención personalizada en cada detalle.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTOS DESTACADOS / TIENDA -->
+  <section id="productos" class="section-padding products-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Productos Destacados</h2>
+        <p>Seleccionados cuidadosamente bajo nuestro criterio profesional</p>
+      </div>
+
+      <div class="product-grid">
+        <!-- Producto 1: Danessa Myricks -->
+        <div class="product-card">
+          <div class="product-image-holder">
+            <span class="product-badge">Multiuso Profesional</span>
+            <img src="https://static.beautytocare.com/cdn-cgi/image/width=1600,height=1600,f=auto/media/catalog/product//d/a/danessa-myricks-groundwork-palette-defining-neutrals.jpg" alt="Danessa Myricks Beauty Groundwork Palette">
+          </div>
+          <div class="product-info">
+            <div>
+              <span class="product-brand">Danessa Myricks Beauty</span>
+              <h3 class="product-title">Groundwork Palette - Defining Neutrals (26g)</h3>
+              <p class="product-desc">Paleta profesional multipropósito con pomadas y polvos diseñados para ojos, cejas, rostro y labios en tonos neutros esenciales.</p>
+            </div>
+            <div class="product-footer">
+              <span class="product-price">Consultar</span>
+              <a href="https://catalogo.treinta.co/MarthaMeloMakeup?category=Paletas" target="_blank" class="btn btn-sm">Pedir</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Producto 2: Dior Backstage -->
+        <div class="product-card">
+          <div class="product-image-holder">
+            <span class="product-badge">Iluminación & Glow</span>
+            <img src="https://www.dior.com/on/demandware.static/-/Sites-master_dior/default/dw2f6883f0/Y0015002/Y0015002_C001500002_E01_RHC.jpg" alt="Dior Backstage Glow Face Palette">
+          </div>
+          <div class="product-info">
+            <div>
+              <span class="product-brand">Dior Backstage</span>
+              <h3 class="product-title">Glow Face Palette - Maximizer</h3>
+              <p class="product-desc">Paleta de iluminadores e iluminadores de rostro multiusos para un resplandor modulable, desde un brillo natural hasta un destello intenso.</p>
+            </div>
+            <div class="product-footer">
+              <span class="product-price">Consultar</span>
+              <a href="https://catalogo.treinta.co/MarthaMeloMakeup?category=Paletas" target="_blank" class="btn btn-sm">Pedir</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Producto 3: Patrick Ta -->
+        <div class="product-card">
+          <div class="product-image-holder">
+            <span class="product-badge">Rubor Dúo Iconic</span>
+            <img src="http://patrickta.com/cdn/shop/files/Mini-Major-Headlines-Double-Take-Creme-_-Powder-Blush-Duo-Shes-Blushing.jpg?v=1787335743&width=2048" alt="Patrick Ta Double Take Blush">
+          </div>
+          <div class="product-info">
+            <div>
+              <span class="product-brand">Patrick Ta Beauty</span>
+              <h3 class="product-title">Double-Take Crème & Powder Blush</h3>
+              <p class="product-desc">Dúo de rubor en crema y polvo compacto diseñado para aplicar en capas y lograr un acabado jugoso, duradero y de alta pigmentación.</p>
+            </div>
+            <div class="product-footer">
+              <span class="product-price">Consultar</span>
+              <a href="https://catalogo.treinta.co/MarthaMeloMakeup?category=Blush" target="_blank" class="btn btn-sm">Pedir</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BANNER CATALOGO VIRTUAL -->
+      <div class="catalog-banner">
+        <h3>Explora nuestro Catálogo Completo</h3>
+        <p>Encuentra todas las marcas de Maquillaje, Skincare y Aceites disponibles en nuestra tienda de Manta.</p>
+        <a href="https://catalogo.treinta.co/MarthaMeloMakeup" target="_blank" class="btn" style="background-color: var(--color-white); color: var(--color-primary);">Ver Catálogo Virtual</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILA DE BENEFICIOS -->
+  <section class="benefits">
+    <div class="container">
+      <div class="benefits-grid">
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+          </div>
+          <h4>Marcas Seleccionadas</h4>
+          <p>Innovación y tendencia internacional</p>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <h4>No Vender por Vender</h4>
+          <p>Asesoría honesta según tu piel</p>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg>
+          </div>
+          <h4>Tendencias Globales</h4>
+          <p>Productos de EE.UU., Europa y Brasil</p>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          </div>
+          <h4>Soporte a Escuelas</h4>
+          <p>Asesoría para profesionales del rubro</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE MARTHA -->
+  <section id="sobre-martha" class="section-padding about-bg">
+    <div class="container about-container">
+      <div class="section-title">
+        <h2>Sobre Martha</h2>
+        <p>Una vida conectada con la belleza</p>
+      </div>
+
+      <div class="about-text-content">
+        <p>Soy Martha Melo, fundadora de <strong>Martha Melo Beauty Care</strong>. Soy portovejense y desde muy joven el mundo de la belleza ha formado parte de mi vida.</p>
+        
+        <p>Crecí muy cerca de esta industria gracias a mi mamá y a su salón de belleza en Portoviejo. Ese entorno despertó en mí una pasión que con los años se convirtió en mi profesión. Me formé en Cosmetología y Maquillaje y llevo más de 10 años trabajando en el mundo de la belleza, el maquillaje y el cuidado de la piel.</p>
+        
+        <p>Hoy continúo ese camino con una <strong>nueva sucursal en Manta</strong>, donde se encuentra nuestra tienda de maquillaje y skincare: un espacio creado para descubrir productos, recibir asesoría y encontrar opciones que realmente se adapten a cada mujer.</p>
+
+        <h3>Belleza sin fronteras</h3>
+        <p>Para mí es fundamental mantenerme en constante evolución. Viajo a ferias y encuentros de belleza en <strong>Estados Unidos, Europa y Brasil</strong>, donde descubro nuevas marcas, productos, técnicas y tendencias para seleccionar cuidadosamente lo que incorporamos a Martha Melo Beauty Care.</p>
+
+        <div class="quote-box">
+          <p>"No creo en vender por vender."</p>
+        </div>
+
+        <p>Antes de recomendar un producto, quiero saber qué necesita mi clienta, qué le funciona y cómo puede aprovecharlo. Mi propósito es que cada compra tenga sentido y que cada mujer se lleve algo que realmente vaya a utilizar, disfrutar y que aporte a su rutina de belleza.</p>
+
+        <p>Esta misma filosofía me ha permitido trabajar con profesionales y escuelas de maquillaje, brindando asesoría y acompañándolos en la selección de productos para su trabajo y formación.</p>
+
+        <p>Después de más de una década, sigo sintiendo la misma pasión por descubrir, aprender y compartir.</p>
+
+        <p style="font-weight: 600; color: var(--color-primary); font-size: 1.15rem; margin-top: 30px; text-align: center; font-family: var(--font-serif); font-style: italic;">
+          Martha Melo Beauty Care es belleza con conocimiento, criterio y propósito.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contacto">
+    <div class="container footer-grid">
+      <!-- Columna 1: Marca -->
+      <div class="footer-col">
+        <h5>MARTHA MELO</h5>
+        <p><strong>Beauty Care</strong> • Cosmetología y Maquillaje Profesional. Uniendo belleza, experiencia y atención personalizada en Manta y Portoviejo.</p>
+      </div>
+
+      <!-- Columna 2: Navegación -->
+      <div class="footer-col">
+        <h5>Navegación</h5>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#esencia">Nuestra Esencia</a></li>
+          <li><a href="#productos">Productos</a></li>
+          <li><a href="#sobre-martha">Sobre Martha</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 3: Especialidades -->
+      <div class="footer-col">
+        <h5>Especialidades</h5>
+        <ul>
+          <li>Skincare & Facial</li>
+          <li>Maquillaje Importado</li>
+          <li>Aceites Corporales</li>
+          <li>Asesoría a Escuelas</li>
+        </ul>
+      </div>
+
+      <!-- Columna 4: Información de Contacto y Redes -->
+      <div class="footer-col">
+        <h5>Ubicación & Contacto</h5>
+        
+        <!-- Dirección -->
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          <span><strong>Dirección:</strong> Vía San Mateo La Plaza Beach local 23</span>
+        </div>
+
+        <!-- Teléfono -->
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          <span><strong>Teléfono:</strong> +593 99 018 3893</span>
+        </div>
+
+        <!-- Atención -->
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          <span><strong>Atención:</strong> Bajo previa cita</span>
+        </div>
+
+        <!-- Iconos Redes Sociales -->
+        <div class="social-links-wrapper">
+          <div class="social-links-title">Síguenos / Contáctanos</div>
+          <div class="social-icons">
+            
+            <!-- WhatsApp Link Directo -->
+            <a href="https://wa.me/593900000000?text=Hola%20Martha%20Melo,%20deseo%20más%20información" target="_blank" class="social-btn wa" title="Escríbenos a WhatsApp" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            </a>
+
+            <!-- Instagram Link Directo -->
+            <a href="https://instagram.com/marthamelobeautycare" target="_blank" class="social-btn ig" title="Síguenos en Instagram" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      &copy; 2026 Martha Melo Beauty Care. Todos los derechos reservados.
+    </div>
+  </footer>
+
+</body>
+</html>
