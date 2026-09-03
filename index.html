@@ -5,27 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Martha Melo | Beauty Care - Cosmetología, Skincare & Maquillaje</title>
   
-  <!-- Google Fonts Opción 1: Cormorant Garamond (Elegante/Femenina) + Montserrat (Limpia) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
   
   <style>
-    /* --------------------------------------------------
-       VARIABLES & TOKENS DE DISEÑO
-    -------------------------------------------------- */
     :root {
-      --color-primary: #880E4F;        /* Elegant Deep Wine / Maroon */
-      --color-primary-dark: #560027;   /* Wine Oscuro */
-      --color-magenta: #C2185B;        /* Dark Magenta / Berry */
-      --color-mauve: #D390BC;          /* Dusty Pink / Mauve */
-      --color-pink-soft: #FCE4EC;      /* Soft Pink Cream */
-      --color-bg-light: #FAFAFA;       /* Core Background Light */
-      --color-text-dark: #212121;      /* Tipografía Oscura */
-      --color-text-muted: #616161;     /* Texto Secundario */
+      --color-primary: #880E4F;
+      --color-primary-dark: #560027;
+      --color-magenta: #C2185B;
+      --color-mauve: #D390BC;
+      --color-pink-soft: #FCE4EC;
+      --color-bg-light: #FAFAFA;
+      --color-text-dark: #212121;
+      --color-text-muted: #616161;
       --color-white: #FFFFFF;
       
-      /* TIPOGRAFÍAS OPCIÓN 1 */
       --font-serif: 'Cormorant Garamond', Georgia, serif;
       --font-sans: 'Montserrat', sans-serif;
       
@@ -35,9 +30,6 @@
       --border-radius: 8px;
     }
 
-    /* --------------------------------------------------
-       RESET & BASE
-    -------------------------------------------------- */
     *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
@@ -88,9 +80,6 @@
       padding: 80px 0;
     }
 
-    /* --------------------------------------------------
-       BOTONES Y TITULOS
-    -------------------------------------------------- */
     .btn {
       display: inline-block;
       padding: 12px 32px;
@@ -176,9 +165,6 @@
       }
     }
 
-    /* --------------------------------------------------
-       1. TOP BAR & NAV
-    -------------------------------------------------- */
     .top-bar {
       background-color: var(--color-primary);
       color: var(--color-white);
@@ -207,35 +193,10 @@
       padding-bottom: 12px;
     }
 
-    .brand-logo {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .brand-logo svg.logo-img {
-      height: 48px;
-      width: 48px;
-    }
-
-    .brand-text {
-      font-family: var(--font-serif);
-      font-size: 1.6rem;
-      font-weight: 600;
-      letter-spacing: 2px;
-      color: var(--color-primary);
-      line-height: 1;
-    }
-
-    .brand-text span {
-      display: block;
-      font-family: var(--font-sans);
-      font-size: 0.58rem;
-      font-weight: 400;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--color-text-muted);
-      margin-top: 4px;
+    .brand-logo-img {
+      height: 50px;
+      width: auto;
+      object-fit: contain;
     }
 
     .nav-links {
@@ -256,9 +217,6 @@
       color: var(--color-primary);
     }
 
-    /* --------------------------------------------------
-       2. HERO SECTION
-    -------------------------------------------------- */
     .hero {
       padding: 90px 0;
       background: linear-gradient(135deg, var(--color-white) 0%, var(--color-pink-soft) 100%);
@@ -305,16 +263,13 @@
       justify-content: center;
     }
 
-    .hero-illustration svg {
+    .hero-illustration img {
       width: 100%;
-      max-width: 380px;
+      max-width: 320px;
       height: auto;
       filter: drop-shadow(0 10px 20px rgba(136, 14, 79, 0.1));
     }
 
-    /* --------------------------------------------------
-       3. NUESTRA ESENCIA
-    -------------------------------------------------- */
     .essence-section {
       background-color: var(--color-white);
     }
@@ -348,9 +303,6 @@
       line-height: 1.3;
     }
 
-    /* --------------------------------------------------
-       4. DESTACADOS / CATÁLOGO DE PRODUCTOS
-    -------------------------------------------------- */
     .products-section {
       background-color: var(--color-bg-light);
     }
@@ -473,9 +425,6 @@
       font-size: 0.9rem;
     }
 
-    /* --------------------------------------------------
-       5. BENEFICIOS Y DIFERENCIADORES
-    -------------------------------------------------- */
     .benefits {
       background-color: var(--color-white);
       border-top: 1px solid rgba(136, 14, 79, 0.08);
@@ -516,9 +465,6 @@
       color: var(--color-text-muted);
     }
 
-    /* --------------------------------------------------
-       6. SOBRE MARTHA
-    -------------------------------------------------- */
     .about-bg {
       background-color: var(--color-white);
     }
@@ -558,9 +504,6 @@
       margin-bottom: 0;
     }
 
-    /* --------------------------------------------------
-       7. FOOTER & CONTACTO SOCIAL
-    -------------------------------------------------- */
     footer {
       background-color: var(--color-primary-dark);
       color: var(--color-white);
@@ -597,7 +540,6 @@
       padding-left: 4px;
     }
 
-    /* ESTILOS DE CONTACTO E ICONOS SOCIALES */
     .contact-item {
       display: flex;
       align-items: flex-start;
@@ -680,10 +622,17 @@
       letter-spacing: 1px;
     }
 
-    /* --------------------------------------------------
-       RESPONSIVE DESIGN
-    -------------------------------------------------- */
     @media (max-width: 900px) {
+      .navbar .container {
+        justify-content: center;
+      }
+
+      .brand-logo {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+      }
+
       .hero-grid {
         grid-template-columns: 1fr;
       }
@@ -731,24 +680,14 @@
 </head>
 <body>
 
-  <!-- TOP BAR -->
   <div class="top-bar">
     Tienda de Maquillaje & Skincare en Manta • Asesoría Personalizada
   </div>
 
-  <!-- NAVBAR -->
   <nav class="navbar">
     <div class="container">
       <a href="#" class="brand-logo">
-        <svg class="logo-img" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="50" cy="50" r="46" stroke="#880E4F" stroke-width="2.5"/>
-          <path d="M50 78 C32 60 25 45 32 30 C37 20 47 25 50 35 C53 25 63 20 68 30 C75 45 68 60 50 78 Z" fill="none" stroke="#212121" stroke-width="2.5"/>
-          <path d="M22 45 C15 35 15 25 25 20 M78 45 C85 35 85 25 75 20" stroke="#212121" stroke-width="2" fill="none"/>
-        </svg>
-        <div class="brand-text">
-          MARTHA MELO
-          <span>Beauty Care</span>
-        </div>
+        <img src="img/header.png" alt="Martha Melo Beauty Care" class="brand-logo-img">
       </a>
       <ul class="nav-links">
         <li><a href="#inicio">Inicio</a></li>
@@ -760,7 +699,6 @@
     </div>
   </nav>
 
-  <!-- HERO SECTION -->
   <section id="inicio" class="hero">
     <div class="container hero-grid">
       <div class="hero-content fade-in-up">
@@ -773,21 +711,11 @@
         </div>
       </div>
       <div class="hero-illustration fade-in-up">
-        <svg viewBox="0 0 400 350" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="200" cy="175" r="140" fill="#FCE4EC"/>
-          <path d="M140 220 L185 100 C190 90 200 95 195 110 L160 230" stroke="#880E4F" stroke-width="8" stroke-linecap="round"/>
-          <path d="M260 220 L215 100 C210 90 200 95 205 110 L240 230" stroke="#880E4F" stroke-width="8" stroke-linecap="round"/>
-          <path d="M175 95 C165 75 145 75 135 90 C125 105 140 120 160 130 Z" fill="#C2185B"/>
-          <path d="M225 95 C235 75 255 75 265 90 C275 105 260 120 240 130 Z" fill="#C2185B"/>
-          <rect x="290" y="150" width="12" height="70" rx="3" fill="#880E4F"/>
-          <rect x="90" y="160" width="30" height="60" rx="5" fill="#FFFFFF" stroke="#880E4F" stroke-width="2"/>
-          <rect x="98" y="145" width="14" height="15" fill="#D390BC"/>
-        </svg>
+        <img src="img/logoo.png" alt="Martha Melo Logo">
       </div>
     </div>
   </section>
 
-  <!-- NUESTRA ESENCIA -->
   <section id="esencia" class="section-padding essence-section">
     <div class="container essence-container">
       <div class="section-title">
@@ -812,7 +740,6 @@
     </div>
   </section>
 
-  <!-- PRODUCTOS DESTACADOS / TIENDA -->
   <section id="productos" class="section-padding products-section">
     <div class="container">
       <div class="section-title">
@@ -821,7 +748,6 @@
       </div>
 
       <div class="product-grid">
-        <!-- Producto 1: Danessa Myricks -->
         <div class="product-card">
           <div class="product-image-holder">
             <span class="product-badge">Multiuso Profesional</span>
@@ -840,7 +766,6 @@
           </div>
         </div>
 
-        <!-- Producto 2: Dior Backstage -->
         <div class="product-card">
           <div class="product-image-holder">
             <span class="product-badge">Iluminación & Glow</span>
@@ -859,7 +784,6 @@
           </div>
         </div>
 
-        <!-- Producto 3: Patrick Ta -->
         <div class="product-card">
           <div class="product-image-holder">
             <span class="product-badge">Rubor Dúo Iconic</span>
@@ -879,7 +803,6 @@
         </div>
       </div>
 
-      <!-- BANNER CATALOGO VIRTUAL -->
       <div class="catalog-banner">
         <h3>Explora nuestro Catálogo Completo</h3>
         <p>Encuentra todas las marcas de Maquillaje, Skincare y Aceites disponibles en nuestra tienda de Manta.</p>
@@ -888,7 +811,6 @@
     </div>
   </section>
 
-  <!-- FILA DE BENEFICIOS -->
   <section class="benefits">
     <div class="container">
       <div class="benefits-grid">
@@ -924,7 +846,6 @@
     </div>
   </section>
 
-  <!-- SOBRE MARTHA -->
   <section id="sobre-martha" class="section-padding about-bg">
     <div class="container about-container">
       <div class="section-title">
@@ -937,7 +858,7 @@
         
         <p>Crecí muy cerca de esta industria gracias a mi mamá y a su salón de belleza en Portoviejo. Ese entorno despertó en mí una pasión que con los años se convirtió en mi profesión. Me formé en Cosmetología y Maquillaje y llevo más de 10 años trabajando en el mundo de la belleza, el maquillaje y el cuidado de la piel.</p>
         
-        <p>Hoy continúo ese camino con una <strong>nueva sucursal en Manta</strong>, donde se encuentra nuestra tienda de maquillaje y skincare: un espacio creado para descubrir productos, recibir asesoría y encontrar opciones que realmente se adapten a cada mujer.</p>
+        <p>Hoy continúo ese camino con una <strong>nueva sucursal en Manta</strong>, donde se encuentra nuestra tienda de maquillaje y skincare: un espacio creado para descubrir productos, recibir asesoría y encontrar opciones que realmente se adaptan a cada mujer.</p>
 
         <h3>Belleza sin fronteras</h3>
         <p>Para mí es fundamental mantenerme en constante evolución. Viajo a ferias y encuentros de belleza en <strong>Estados Unidos, Europa y Brasil</strong>, donde descubro nuevas marcas, productos, técnicas y tendencias para seleccionar cuidadosamente lo que incorporamos a Martha Melo Beauty Care.</p>
@@ -959,16 +880,13 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer id="contacto">
     <div class="container footer-grid">
-      <!-- Columna 1: Marca -->
       <div class="footer-col">
         <h5>MARTHA MELO</h5>
         <p><strong>Beauty Care</strong> • Cosmetología y Maquillaje Profesional. Uniendo belleza, experiencia y atención personalizada en Manta y Portoviejo.</p>
       </div>
 
-      <!-- Columna 2: Navegación -->
       <div class="footer-col">
         <h5>Navegación</h5>
         <ul>
@@ -979,7 +897,6 @@
         </ul>
       </div>
 
-      <!-- Columna 3: Especialidades -->
       <div class="footer-col">
         <h5>Especialidades</h5>
         <ul>
@@ -990,41 +907,34 @@
         </ul>
       </div>
 
-      <!-- Columna 4: Información de Contacto y Redes -->
       <div class="footer-col">
         <h5>Ubicación & Contacto</h5>
         
-        <!-- Dirección -->
         <div class="contact-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
           <span><strong>Dirección:</strong> Vía San Mateo La Plaza Beach local 23</span>
         </div>
 
-        <!-- Teléfono -->
         <div class="contact-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
           <span><strong>Teléfono:</strong> +593 99 018 3893</span>
         </div>
 
-        <!-- Atención -->
         <div class="contact-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-          <span><strong>Atención:</strong> Bajo previa cita</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          <span><strong>Compras al por mayor:</strong> +1 7543132374</span>
         </div>
 
-        <!-- Iconos Redes Sociales -->
         <div class="social-links-wrapper">
           <div class="social-links-title">Síguenos / Contáctanos</div>
           <div class="social-icons">
             
-            <!-- WhatsApp Link Directo -->
-            <a href="https://wa.me/593900000000?text=Hola%20Martha%20Melo,%20deseo%20más%20información" target="_blank" class="social-btn wa" title="Escríbenos a WhatsApp" aria-label="WhatsApp">
-              <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            <a href="https://www.instagram.com/marthamelomakeup" target="_blank" class="social-btn ig" title="Síguenos en Instagram" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
             </a>
 
-            <!-- Instagram Link Directo -->
-            <a href="https://instagram.com/marthamelobeautycare" target="_blank" class="social-btn ig" title="Síguenos en Instagram" aria-label="Instagram">
-              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            <a href="https://wa.me/593990183893?text=Hola%20Martha%20Melo,%20deseo%20más%20información" target="_blank" class="social-btn wa" title="WhatsApp Contacto" aria-label="WhatsApp Contacto">
+              <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
             </a>
 
           </div>
